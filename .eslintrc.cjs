@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-essential', // 支持vue3相关语法的检测
     'standard-with-typescript',
+    './.eslintrc-auto-import.json',
     'plugin:prettier/recommended' // 添加 prettier 插件
   ],
   overrides: [],
