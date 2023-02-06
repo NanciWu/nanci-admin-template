@@ -1,12 +1,17 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    createSvgIconsPlugin({
+      iconDirs: [resolve(process.cwd(), './src/icons')]
+    }),
     AutoImport({
       // 自动按需引入依赖
       imports: ['vue', 'vue-router', 'pinia'],
